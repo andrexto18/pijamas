@@ -1,0 +1,136 @@
+/* ==========================================================================
+   1. RESET & CONFIGURACIÓN GENERAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #fcfbfa; /* Un blanco hueso muy suave y elegante, no puro */
+    color: #333333;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+/* Título principal del portafolio */
+h1 {
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #4a4a4a;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+/* ==========================================================================
+   2. REJILLA DEL CATÁLOGO (CSS GRID)
+   ========================================================================== */
+.grid-catalogo {
+    display: grid;
+    /* Crea columnas automáticas. Ninguna baja de 280px ni supera el espacio disponible */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px; /* Espacio generoso entre tarjetas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el catálogo en la pantalla */
+}
+
+/* ==========================================================================
+   3. TARJETA DE PRODUCTO Minimalista
+   ========================================================================== */
+.tarjeta-pijama {
+    background-color: #ffffff;
+    border-radius: 4px; /* Bordes ligeramente suavizados, no tan redondos */
+    overflow: hidden;
+    /* Una sombra extremadamente suave para dar sutil profundidad */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efecto flotante muy sutil al pasar el mouse */
+.tarjeta-pijama:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================================================
+   4. CONTENEDOR DE LA IMAGEN
+   ========================================================================== */
+.contenedor-imagen {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Proporción vertical elegante, tipo revista de moda */
+    overflow: hidden;
+    background-color: #f5f5f5; /* Fondo gris por si la imagen tarda en cargar */
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que cubra el espacio sin deformarse */
+    transition: transform 0.6s ease;
+}
+
+/* Zoom lento de la foto al pasar el mouse por la tarjeta */
+.tarjeta-pijama:hover .contenedor-imagen img {
+    transform: scale(1.04);
+}
+
+/* ==========================================================================
+   5. INFORMACIÓN DEL PRODUCTO
+   ========================================================================== */
+.info-pijama {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja el botón al fondo si las descripciones varían de tamaño */
+}
+
+.info-pijama .descripcion {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+    margin-bottom: 10px;
+    text-transform: capitalize; /* Convierte la primera letra en mayúscula */
+}
+
+.info-pijama .precio {
+    font-size: 18px;
+    font-weight: 600;
+    color: #b57c8a; /* Un tono rosa viejo/palo de rosa elegante para el precio */
+    margin-bottom: 20px;
+}
+
+/* Botón sutil */
+.info-pijama .btn-ver {
+    background-color: transparent;
+    color: #4a4a4a;
+    border: 1px solid #e0e0e0;
+    padding: 10px 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    margin-top: auto; /* Alineación perfecta al fondo */
+}
+
+.info-pijama .btn-ver:hover {
+    background-color: #4a4a4a;
+    border-color: #4a4a4a;
+    color: #ffffff;
+}
+
+/* Mensaje en caso de que la base de datos esté vacía */
+.mensaje-vacio {
+    text-align: center;
+    grid-column: 1 / -1;
+    color: #888888;
+    font-style: italic;
+    padding: 40px;
+}
