@@ -19,14 +19,6 @@ const db = mysql.createPool({
     queueLimit: 0
 });
 
-// Conectar a MySQL
-db.connect((err) => {
-    if (err) {
-        console.error('Error al conectar a la base de datos:', err);
-        return;
-    }
-    console.log('¡Conectado exitosamente a la base de datos "pijamas"!');
-});
 
 // Crear la ruta de la API (El Endpoint)
 app.get('/api/pijamas', (req, res) => {
