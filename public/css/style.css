@@ -15,6 +15,16 @@ body {
     padding: 40px 20px;
 }
 
+.contenedor-image{
+    background-image: url(../img/banner.png); /* Imagen de fondo del contenedor */
+    background-repeat: no-repeat;           /* La imagen no se repite */
+    background-size: cover;                 /* La imagen cubre todo el área */
+    height: 370px;                          /* Altura fija de 450px */
+    position: relative;    
+    margin-bottom: 20px;                 /* Permite posicionar elementos hijos de forma absoluta */
+}
+
+
 /* Título principal del portafolio */
 h1 {
     text-align: center;
