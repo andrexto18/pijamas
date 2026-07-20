@@ -36,8 +36,8 @@ function renderizarCatalogo(listaDePijamas) {
     listaDePijamas.forEach(pijama => {
         // Creamos la estructura HTML de una tarjeta limpia y minimalista
         const tarjetaHtml = `
-            <article class="tarjeta-pijama">
-                <div class="contenedor-imagen">
+            <article class="tarjeta-pijama sombra">
+                <div class="contenedor-imagen ">
                     <img src="${pijama.imagen}" alt="${pijama.descripcion}" loading="lazy">
                 </div>
                 <div class="info-pijama">
